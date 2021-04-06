@@ -944,6 +944,7 @@ void readInEachExp(string exp, int**& var, double**& deg, int**& degNumerator, i
 			num++;
 			prevStartPos=i+1;
 		}
+                //Can't nothing else
 	}
 	i = exp.size();
 	startPos=prevStartPos;
