@@ -1,4 +1,5 @@
 //Time: 9:42am
+//Commented out singlereadin
 #include<iostream>
 #include<string>
 #include<cstdlib>
