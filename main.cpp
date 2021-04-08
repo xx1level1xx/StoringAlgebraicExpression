@@ -1,5 +1,6 @@
 //Time: 9:42am
 //Commented out singlereadin
+//node, currentPtr, allTreePtr
 #include<iostream>
 #include<string>
 #include<cstdlib>
