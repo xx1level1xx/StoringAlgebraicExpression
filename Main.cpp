@@ -314,7 +314,7 @@ int main(){
 			i += 2;
 		}*/
 		for (int j = 0; j < count; j++){
-			if (i + func[j].size - 1 < exp.size() - func[j].size() && exp.substr(i, func[j].size()) == func[j]){
+			if (i + func[j].size() - 1 < exp.size() - func[j].size() && exp.substr(i, func[j].size()) == func[j]){
 				if (exp[i + func[j].size()] != '('){
 					notAFunc = false;
 					i += 2;
@@ -330,12 +330,7 @@ int main(){
 		//cout<<"current "<<exp[i]<<" "<<notAFunc<<endl;
 		if (notAFunc&&isalpha(exp[i])){
 			//if(isalpha(exp[i])){
-			while (isalpha(exp[i])){
-				i++;
-			}
-			i--;
-			start = i;
-			count2++;
+			start = i;		
 			//}
 			for (int j = 0; j<varCount; j++){
 				count = 0;
@@ -352,7 +347,23 @@ int main(){
 				}
 			}
 			i = start;
+			while (isalpha(exp[i])){
+				i++;
+			}
+			i--;
+			count2++;
 		}
+		if (numMatched != count2){
+			cout << "no matching variables from the list in the expression" << endl;
+			system("pause");
+			exit(1);
+		}
+		else{
+			cout << "passed" << endl;
+		}
+		delete[] op;
+		system("pause");
+		return 0;
 	}
 	void readIn(string exp, string variables, int& numLevel, int*& numNodeEachLevel,
 		int**& allTreePtrType, int**& allTreePtrBeginning, int**& allTreePtrEnd, int****& allTreePtrVar, int****& allTreePtrDeg, int***& allTreePtrCoeff, int***& allTreePtrNumVar, int**& allTreePtrNum,
